@@ -1,0 +1,8 @@
+.app {
+  border: 2px solid red;
+  margin: 0px;
+  height: 680px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
