@@ -2,5 +2,31 @@
   height: 50%;
   border: 2px solid cyan;
   width: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+}
+
+.button-region-container {
+  border: 2px solid salmon;
+  margin: 0;
+  height: 80%;
+  width: 80%;
+}
+
+.inner-button-container {
+  height: 100%;
+  width: 100%;
+  border: 1px dotted blue;
+  margin: 0px;
+}
+
+.up-button-container {
+}
+
+.center-button-container {
+}
+
+.down-button-container {
 }
