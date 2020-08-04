@@ -9,8 +9,8 @@ class Screen extends Component {
   render() {
     return (
       <div className="screen-container">
-        {/* <Menu />
-        <Games /> */}
+        {/* <Menu />*/}
+        {/* <Games /> */}
         {/* <Setting /> */}
         <Coverflow />
       </div>
