@@ -1,32 +1,98 @@
 .button-container {
   height: 50%;
-  border: 2px solid cyan;
+  /* border: 2px solid cyan; */
   width: 99%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
+  background: lightgrey;
 }
 
 .button-region-container {
-  border: 2px solid salmon;
+  /* border: 2px solid salmon; */
   margin: 0;
   height: 80%;
   width: 80%;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .inner-button-container {
   height: 100%;
   width: 100%;
-  border: 1px dotted blue;
+  /* border: 1px dotted blue; */
   margin: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: azure;
 }
 
 .up-button-container {
+  /* border: 2px solid green; */
+  margin: 0px;
+  padding: 0px;
+  width: 99%;
+  height: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center-button-container {
+  /* border: 2px solid yellow; */
+  margin: 0;
+  padding: 0;
+  width: 99%;
+  height: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .down-button-container {
+  /* border: 2px solid blueviolet; */
+  margin: 0;
+  padding: 0;
+  width: 99%;
+  height: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  height: 100%;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 65%;
+  width: 65%;
+}
+
+.menu-button {
+  /* border: 1px dotted orange; */
+}
+
+.backward-button {
+  /* border: 1px dotted aqua; */
+}
+
+.center-button {
+  /* border: 1px dotted lime; */
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.forward-button {
+  /* border: 1px dotted skyblue; */
+}
+
+.pause-play-button {
+  /* border: 1px dotted red; */
 }
