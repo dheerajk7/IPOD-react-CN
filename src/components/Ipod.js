@@ -4,6 +4,14 @@ import Screen from './Screen';
 import Buttons from './Buttons';
 
 class Ipod extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeComponent: 'Games',
+      activeItem: 'Album',
+    };
+  }
+
   render() {
     return (
       <div className="container">
