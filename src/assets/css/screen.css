@@ -1,6 +1,8 @@
 .screen-container {
   height: 50%;
-  border: 2px solid green;
   width: 99%;
   margin: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 30px;
+  overflow: hidden;
 }
