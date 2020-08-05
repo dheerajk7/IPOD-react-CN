@@ -74,7 +74,6 @@ class Buttons extends Component {
     if (activeComponent === 'Menu') {
       this.forwardMoveMenuComponent();
     } else if (activeComponent === 'Music') {
-      console.log('mucis');
       this.forwardMoveMusicComponent();
     }
   };
