@@ -1,19 +1,53 @@
 import React, { Component } from 'react';
 import '../assets/css/buttons.css';
 import { connect } from 'react-redux';
-import { changeComponent } from '../actions/changeComponent';
+import { changeComponent } from '../actions/component';
+import { changeActiveItem } from '../actions/component';
 
 class Buttons extends Component {
   changeComponentToMenu = () => {
     this.props.dispatch(changeComponent('Menu'));
   };
 
-  changeComponent = () => {
+  changingActiveComponent = () => {
     const { dispatch } = this.props;
     const { activeComponent, activeItem } = this.props.component;
     if (activeComponent === 'Menu' || activeComponent === 'Music') {
       dispatch(changeComponent(activeItem));
     }
+  };
+
+  forwardMoveMenuComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'Coverflow') {
+      dispatch(changeActiveItem('Music'));
+    } else if (activeItem === 'Music') {
+      dispatch(changeActiveItem('Games'));
+    } else if (activeItem === 'Games') {
+      dispatch(changeActiveItem('Setting'));
+    } else if (activeItem === 'Setting') {
+      dispatch(changeActiveItem('Coverflow'));
+    }
+  };
+
+  backwardMoveMenuComponent = () => {};
+
+  forwardMoveMusicComponent = () => {};
+
+  backwardMoveMusicComponent = () => {};
+
+  changingActiveItemForward = () => {
+    const { activeComponent } = this.props.component;
+    if (activeComponent === 'Menu') {
+      this.forwardMoveMenuComponent();
+    } else if (activeComponent === 'Music') {
+      console.log('Music');
+    }
+  };
+
+  changingActiveItemBackward = () => {
+    const { activeComponent } = this.props.component;
   };
 
   render() {
@@ -33,7 +67,10 @@ class Buttons extends Component {
               </div>
             </div>
             <div className="center-button-container">
-              <div className="button backward-button">
+              <div
+                className="button backward-button"
+                onClick={this.changingActiveItemBackward}
+              >
                 <img
                   src="https://image.flaticon.com/icons/svg/56/56760.svg"
                   alt="backward-button"
@@ -41,9 +78,12 @@ class Buttons extends Component {
               </div>
               <div
                 className="button center-button"
-                onClick={this.changeComponent}
+                onClick={this.changingActiveComponent}
               ></div>
-              <div className="button forward-button">
+              <div
+                className="button forward-button"
+                onClick={this.changingActiveItemForward}
+              >
                 <img
                   src="https://image.flaticon.com/icons/svg/724/724927.svg"
                   alt="forward-button"

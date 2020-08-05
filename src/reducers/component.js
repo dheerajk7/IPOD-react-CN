@@ -1,8 +1,8 @@
-import { CHANGE_COMPONENT } from '../actions/actionTypes';
+import { CHANGE_COMPONENT, CHANGE_ACTIVE_ITEM } from '../actions/actionTypes';
 
 const initialState = {
-  activeComponent: 'Games',
-  activeItem: 'Music',
+  activeComponent: 'Menu',
+  activeItem: 'Coverflow',
 };
 
 export default function changingComponent(state = initialState, action) {
@@ -26,6 +26,12 @@ export default function changingComponent(state = initialState, action) {
           activeComponent: action.component,
         };
       }
+    }
+    case CHANGE_ACTIVE_ITEM: {
+      return {
+        ...state,
+        activeItem: action.item,
+      };
     }
     default: {
       return state;

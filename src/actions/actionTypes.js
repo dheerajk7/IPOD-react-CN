@@ -1,2 +1,3 @@
 //action types
 export const CHANGE_COMPONENT = 'CHANGE_COMPONENT';
+export const CHANGE_ACTIVE_ITEM = 'CHANGE_ACTIVE_ITEM';
