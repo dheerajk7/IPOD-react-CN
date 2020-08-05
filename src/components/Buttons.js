@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import '../assets/css/buttons.css';
+import { connect } from 'react-redux';
+import { changeComponent } from '../actions/changeComponent';
 
 class Buttons extends Component {
+  changeComponentToMenu = () => {
+    this.props.dispatch(changeComponent('Menu'));
+  };
+
   render() {
     return (
       <div className="button-container">
         <div className="button-region-container">
           <div className="inner-button-container">
             <div className="up-button-container">
-              <div className="button menu-button">
+              <div
+                className="button menu-button"
+                onClick={this.changeComponentToMenu}
+              >
                 <img
                   src="https://image.flaticon.com/icons/svg/2099/2099153.svg"
                   alt="menu-button"
@@ -45,4 +54,8 @@ class Buttons extends Component {
   }
 }
 
-export default Buttons;
+function mapStateToProps(state) {
+  return state;
+}
+
+export default connect(mapStateToProps)(Buttons);

@@ -12,7 +12,7 @@ export default function changingComponent(state = initialState, action) {
         return {
           ...state,
           activeComponent: action.component,
-          activeItem: 'Music',
+          activeItem: 'Coverflow',
         };
       } else if (action.component === 'Music') {
         return {
