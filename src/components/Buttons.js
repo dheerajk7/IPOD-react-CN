@@ -31,7 +31,19 @@ class Buttons extends Component {
     }
   };
 
-  backwardMoveMenuComponent = () => {};
+  backwardMoveMenuComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'Coverflow') {
+      dispatch(changeActiveItem('Setting'));
+    } else if (activeItem === 'Music') {
+      dispatch(changeActiveItem('Coverflow'));
+    } else if (activeItem === 'Games') {
+      dispatch(changeActiveItem('Music'));
+    } else if (activeItem === 'Setting') {
+      dispatch(changeActiveItem('Games'));
+    }
+  };
 
   forwardMoveMusicComponent = () => {};
 
@@ -48,6 +60,11 @@ class Buttons extends Component {
 
   changingActiveItemBackward = () => {
     const { activeComponent } = this.props.component;
+    if (activeComponent === 'Menu') {
+      this.backwardMoveMenuComponent();
+    } else if (activeComponent === 'Music') {
+      this.backwardMoveMusicComponent();
+    }
   };
 
   render() {
