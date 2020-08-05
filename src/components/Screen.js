@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Menu from './Menu';
 import Games from './Games';
 import Setting from './Setting';
@@ -21,4 +22,10 @@ class Screen extends Component {
   }
 }
 
-export default Screen;
+function mapStateToProps(state) {
+  return {
+    activeComponent: state.component.activeComponent,
+    activeItem: state.component.activeItem,
+  };
+}
+export default connect(mapStateToProps)(Screen);
