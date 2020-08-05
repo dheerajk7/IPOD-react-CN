@@ -8,7 +8,7 @@
   padding-top: 2px;
   width: 60%;
   height: 95%;
-  background-color: whitesmoke;
+  background-color: #fcffe3a1;
   border-radius: 5px;
 }
 
@@ -19,7 +19,7 @@ ul {
 }
 
 .menu-heading {
-  padding: 2.4%;
+  padding: 5%;
   padding-left: 8%;
   font-size: 3rem;
   height: 20%;
@@ -34,7 +34,7 @@ ul {
 }
 
 .active {
-  background-color: blue;
   color: white;
-  border: 0.5px solid navy;
+  border: 0.5px solid black;
+  background-image: linear-gradient(to right, #cd2f0b, #b22100, #992409);
 }

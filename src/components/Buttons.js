@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
+import ZingTouch from 'zingtouch';
 import '../assets/css/buttons.css';
 import { connect } from 'react-redux';
 import { changeComponent } from '../actions/component';
 import { changeActiveItem } from '../actions/component';
 
 class Buttons extends Component {
+  constructor(props) {
+    super(props);
+    this.defined = false;
+    this.zingRegion = React.createRef();
+    this.region = null;
+    this.inner = React.createRef();
+  }
+
+  componentDidMount() {
+    this.region = new ZingTouch.Region(this.zingRegion.current);
+  }
+
+  componentWillUnmount() {
+    this.defined = false;
+  }
+
   changeComponentToMenu = () => {
     this.props.dispatch(changeComponent('Menu'));
   };
@@ -87,11 +104,53 @@ class Buttons extends Component {
     }
   };
 
+  rotate = (target) => {
+    let angleChange = 0;
+    let distance = 0;
+    let oldThis = this;
+    this.region.bind(target, 'rotate', function (event) {
+      let currentDistance = event.detail.distanceFromLast;
+      if (distance === 0) {
+        distance = currentDistance;
+      } else {
+        if (currentDistance > 0 && distance < 0) {
+          angleChange = 0;
+          distance = 0;
+        } else if (currentDistance < 0 && distance > 0) {
+          angleChange = 0;
+          distance = 0;
+        }
+      }
+      angleChange++;
+      if (angleChange === 15) {
+        angleChange = 0;
+        if (distance < 0) {
+          oldThis.backwardMoveMenuComponent();
+          oldThis.backwardMoveMusicComponent();
+        } else {
+          oldThis.forwardMoveMenuComponent();
+          oldThis.forwardMoveMusicComponent();
+        }
+      }
+    });
+  };
+
+  rotateUsingZing = () => {
+    if (this.defined === false) {
+      this.defined = true;
+      this.rotate(this.inner.current);
+    }
+  };
+
   render() {
     return (
       <div className="button-container">
-        <div className="button-region-container">
-          <div className="inner-button-container">
+        <div className="button-region-container" ref={this.zingRegion}>
+          <div
+            className="inner-button-container"
+            onMouseOver={this.rotateUsingZing}
+            ref={this.inner}
+          >
             <div className="up-button-container">
               <div
                 className="button menu-button"
@@ -104,10 +163,7 @@ class Buttons extends Component {
               </div>
             </div>
             <div className="center-button-container">
-              <div
-                className="button backward-button"
-                onClick={this.changingActiveItemBackward}
-              >
+              <div className="button backward-button">
                 <img
                   src="https://image.flaticon.com/icons/svg/56/56760.svg"
                   alt="backward-button"
@@ -117,10 +173,7 @@ class Buttons extends Component {
                 className="button center-button"
                 onClick={this.changingActiveComponent}
               ></div>
-              <div
-                className="button forward-button"
-                onClick={this.changingActiveItemForward}
-              >
+              <div className="button forward-button">
                 <img
                   src="https://image.flaticon.com/icons/svg/724/724927.svg"
                   alt="forward-button"
