@@ -45,16 +45,37 @@ class Buttons extends Component {
     }
   };
 
-  forwardMoveMusicComponent = () => {};
+  forwardMoveMusicComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'All Music') {
+      dispatch(changeActiveItem('Artist'));
+    } else if (activeItem === 'Artist') {
+      dispatch(changeActiveItem('Album'));
+    } else if (activeItem === 'Album') {
+      dispatch(changeActiveItem('All Music'));
+    }
+  };
 
-  backwardMoveMusicComponent = () => {};
+  backwardMoveMusicComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'All Music') {
+      dispatch(changeActiveItem('Album'));
+    } else if (activeItem === 'Artist') {
+      dispatch(changeActiveItem('All Music'));
+    } else if (activeItem === 'Album') {
+      dispatch(changeActiveItem('Artist'));
+    }
+  };
 
   changingActiveItemForward = () => {
     const { activeComponent } = this.props.component;
     if (activeComponent === 'Menu') {
       this.forwardMoveMenuComponent();
     } else if (activeComponent === 'Music') {
-      console.log('Music');
+      console.log('mucis');
+      this.forwardMoveMusicComponent();
     }
   };
 
