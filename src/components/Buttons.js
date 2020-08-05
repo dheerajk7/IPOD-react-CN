@@ -8,6 +8,14 @@ class Buttons extends Component {
     this.props.dispatch(changeComponent('Menu'));
   };
 
+  changeComponent = () => {
+    const { dispatch } = this.props;
+    const { activeComponent, activeItem } = this.props.component;
+    if (activeComponent === 'Menu' || activeComponent === 'Music') {
+      dispatch(changeComponent(activeItem));
+    }
+  };
+
   render() {
     return (
       <div className="button-container">
@@ -31,7 +39,10 @@ class Buttons extends Component {
                   alt="backward-button"
                 ></img>
               </div>
-              <div className="button center-button"></div>
+              <div
+                className="button center-button"
+                onClick={this.changeComponent}
+              ></div>
               <div className="button forward-button">
                 <img
                   src="https://image.flaticon.com/icons/svg/724/724927.svg"
@@ -55,7 +66,9 @@ class Buttons extends Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  return {
+    component: state.component,
+  };
 }
 
 export default connect(mapStateToProps)(Buttons);
