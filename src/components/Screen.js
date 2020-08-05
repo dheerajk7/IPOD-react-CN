@@ -6,6 +6,7 @@ import Setting from './Setting';
 import Coverflow from './Coverflow';
 import Music from './Music';
 import Artist from './Artist';
+import Album from './Album';
 import '../assets/css/screen.css';
 
 class Screen extends Component {
@@ -19,6 +20,7 @@ class Screen extends Component {
         {activeComponent === 'Games' && <Games />}
         {activeComponent === 'Setting' && <Setting />}
         {activeComponent === 'Artist' && <Artist />}
+        {activeComponent === 'Album' && <Album />}
       </div>
     );
   }
