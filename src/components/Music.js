@@ -6,7 +6,7 @@ class Music extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 'Album',
+      activeItem: this.props.activeItem,
     };
   }
 

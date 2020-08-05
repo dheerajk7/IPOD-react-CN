@@ -6,16 +6,20 @@ import Buttons from './Buttons';
 class Ipod extends Component {
   constructor(props) {
     super(props);
+    //using state to maintain active list option and active component
     this.state = {
-      activeComponent: 'Games',
-      activeItem: 'Album',
+      activeComponent: 'Menu',
+      activeItem: 'Music',
     };
   }
 
   render() {
     return (
       <div className="container">
-        <Screen />
+        <Screen
+          activeComponent={this.state.activeComponent}
+          activeItem={this.state.activeItem}
+        />
         <Buttons />
       </div>
     );
