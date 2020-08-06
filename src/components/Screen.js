@@ -7,8 +7,11 @@ import Coverflow from './Coverflow';
 import Music from './Music';
 import Artist from './Artist';
 import Album from './Album';
+import Playing from './Playing';
 import '../assets/css/screen.css';
 
+// render screen of IPOD
+// depend on different active component in received from props these will set the component on screen
 class Screen extends Component {
   render() {
     const { activeComponent, activeItem } = this.props;
@@ -21,15 +24,19 @@ class Screen extends Component {
         {activeComponent === 'Setting' && <Setting />}
         {activeComponent === 'Artist' && <Artist />}
         {activeComponent === 'Album' && <Album />}
+        {activeComponent === 'All Music' && <Playing />}
       </div>
     );
   }
 }
 
+// mapping activeComponent and activeItem from store to the props of screen
 function mapStateToProps(state) {
   return {
     activeComponent: state.component.activeComponent,
     activeItem: state.component.activeItem,
   };
 }
+
+// connecting props from store to screen
 export default connect(mapStateToProps)(Screen);

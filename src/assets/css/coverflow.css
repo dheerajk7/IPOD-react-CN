@@ -1,4 +1,4 @@
-/* backgroung image for coverflow container */
+/* setting backgroung image for coverflow container */
 .coverflow-container {
   background-image: url('../images/coverflow.jpg');
 }

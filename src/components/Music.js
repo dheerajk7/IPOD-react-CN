@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../assets/css/common.css';
 import '../assets/css/menu.css';
 
+// rendering different music item to show in music
+// marking active item to be active with red color background using activeItem received in props
 class Music extends Component {
   render() {
     const { activeItem } = this.props;

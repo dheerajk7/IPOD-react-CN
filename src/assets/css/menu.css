@@ -1,7 +1,9 @@
+/* setting background image of menu container */
 .menu-container {
   background-image: url('../images/menu-background.jpg');
 }
 
+/* block that contain menu heading and menu list*/
 .menu {
   margin: 0px;
   padding: 0px;
@@ -12,12 +14,14 @@
   border-radius: 5px;
 }
 
+/* styles for unordered list */
 ul {
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
 
+/* styles for main menu heading */
 .menu-heading {
   padding: 5%;
   padding-left: 8%;
@@ -25,6 +29,7 @@ ul {
   height: 20%;
 }
 
+/* style for particular list item */
 .menu-list-item {
   border: 0.5px solid grey;
   font-weight: 500;
@@ -33,6 +38,7 @@ ul {
   border-radius: 5px;
 }
 
+/* styles when menu list item is active */
 .active {
   color: white;
   border: 0.5px solid black;

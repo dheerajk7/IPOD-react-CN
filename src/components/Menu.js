@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../assets/css/common.css';
 import '../assets/css/menu.css';
 
+// rendering different menu item to show in menu
+// marking active item to be active with red color background using activeItem received in props
 class Menu extends Component {
   render() {
     const { activeItem } = this.props;

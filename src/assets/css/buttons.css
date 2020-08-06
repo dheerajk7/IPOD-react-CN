@@ -1,3 +1,4 @@
+/* container for button */
 .button-container {
   height: 50%;
   width: 99%;
@@ -7,6 +8,7 @@
   margin: 0;
 }
 
+/* region container for creating zingtouch region around the circle*/
 .button-region-container {
   margin: 0;
   height: 80%;
@@ -15,6 +17,7 @@
   border-radius: 50%;
 }
 
+/* main button container */
 .inner-button-container {
   height: 100%;
   width: 100%;
@@ -25,6 +28,7 @@
   background-image: linear-gradient(to right, #e5b17a, #c66d18, #f3be8c);
 }
 
+/* upper container container menu button */
 .up-button-container {
   margin: 0px;
   padding: 0px;
@@ -35,6 +39,7 @@
   align-items: center;
 }
 
+/* center button container containing forward, backward and center click button */
 .center-button-container {
   margin: 0;
   padding: 0;
@@ -45,6 +50,7 @@
   align-items: center;
 }
 
+/* down button container containing pause play button */
 .down-button-container {
   margin: 0;
   padding: 0;
@@ -55,6 +61,7 @@
   align-items: center;
 }
 
+/* css for styling every button inside the component */
 .button {
   height: 100%;
   width: 33%;
@@ -71,15 +78,18 @@
   -khtml-user-select: none;
 }
 
+/* setting outline to none when button in focus */
 .button:focus {
   outline: none;
 }
 
-img {
+/* setting the size of img inside the button */
+.button img {
   height: 65%;
   width: 65%;
 }
 
+/* setting background color and border radius for center button */
 .center-button {
   border-radius: 50%;
   background-color: #e1fffe;

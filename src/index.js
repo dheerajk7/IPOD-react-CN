@@ -7,6 +7,7 @@ import './assets/css/index.css';
 
 //configuring new store
 const store = configureStore();
+// passing store to app using provider
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
