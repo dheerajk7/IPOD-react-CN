@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/ipod.css';
 import Screen from './Screen';
 import Buttons from './Buttons';
+import { connect } from 'react-redux';
 
 // renders the main ipod component in two parts
 // first part is screen of IPOD which show different component
@@ -17,8 +18,10 @@ class Ipod extends Component {
   }
 
   render() {
+    const { styles } = this.props;
+    console.log('st', styles);
     return (
-      <div className="container">
+      <div className="container" style={styles}>
         <Screen
           activeComponent={this.state.activeComponent}
           activeItem={this.state.activeItem}
@@ -29,4 +32,9 @@ class Ipod extends Component {
   }
 }
 
-export default Ipod;
+function mapStateToProps(state) {
+  return {
+    styles: state.theme.ipod_background,
+  };
+}
+export default connect(mapStateToProps)(Ipod);

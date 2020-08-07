@@ -172,6 +172,7 @@ class Buttons extends Component {
 
   // rendering button component
   render() {
+    const { styles } = this.props;
     return (
       <div className="button-container">
         <div className="button-region-container" ref={this.zingRegion}>
@@ -179,6 +180,7 @@ class Buttons extends Component {
             className="inner-button-container"
             onMouseOver={this.rotateUsingZing}
             ref={this.inner}
+            style={styles}
           >
             <div className="up-button-container">
               <div
@@ -237,6 +239,7 @@ function mapStateToProps(state) {
   return {
     component: state.component,
     playing: state.song.isSongPlaying,
+    styles: state.theme.circle_background,
   };
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../assets/css/common.css';
 import '../assets/css/menu.css';
 
@@ -6,24 +7,30 @@ import '../assets/css/menu.css';
 // marking active item to be active with red color background using activeItem received in props
 class Music extends Component {
   render() {
-    const { activeItem } = this.props;
+    const { activeItem, styles } = this.props;
     return (
       <div className="menu-container screen-item-container">
-        <div className="menu">
+        <div className="menu" style={styles.menu}>
           <div className="menu-heading">Music</div>
           <ul className="menu-list-container">
             {activeItem === 'All Music' ? (
-              <li className="menu-list-item active">All Music</li>
+              <li className="menu-list-item active" style={styles.active}>
+                All Music
+              </li>
             ) : (
               <li className="menu-list-item">All Music</li>
             )}
             {activeItem === 'Artist' ? (
-              <li className="menu-list-item active">Artist</li>
+              <li className="menu-list-item active" style={styles.active}>
+                Artist
+              </li>
             ) : (
               <li className="menu-list-item">Artist</li>
             )}
             {activeItem === 'Album' ? (
-              <li className="menu-list-item active">Album</li>
+              <li className="menu-list-item active" style={styles.active}>
+                Album
+              </li>
             ) : (
               <li className="menu-list-item">Album</li>
             )}
@@ -34,4 +41,10 @@ class Music extends Component {
   }
 }
 
-export default Music;
+function mapStateToProps(state) {
+  return {
+    styles: state.theme.menu,
+  };
+}
+
+export default connect(mapStateToProps)(Music);

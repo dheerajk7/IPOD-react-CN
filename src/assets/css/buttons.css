@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to right, #e5b17a, #c66d18, #f3be8c);
+  /* background-image: linear-gradient(to right, #e5b17a, #c66d18, #f3be8c); */
 }
 
 /* upper container container menu button */
