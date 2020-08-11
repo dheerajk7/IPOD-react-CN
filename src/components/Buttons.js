@@ -61,13 +61,14 @@ class Buttons extends Component {
         dispatch(playSong());
       }
       return;
-    }
-    if (
+    } else if (
       activeComponent === 'Menu' ||
       activeComponent === 'Music' ||
       activeComponent === 'Setting'
     ) {
       dispatch(changeComponent(activeItem));
+    } else if (activeComponent === 'Themes') {
+      console.log(activeItem);
     }
   };
 
@@ -149,6 +150,32 @@ class Buttons extends Component {
     }
   };
 
+  //changing active item of themes component in forward direction
+  forwardMoveThemesComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'Marshmello') {
+      dispatch(changeActiveItem('Striker'));
+    } else if (activeItem === 'Striker') {
+      dispatch(changeActiveItem('Virtue'));
+    } else if (activeItem === 'Virtue') {
+      dispatch(changeActiveItem('Marshmello'));
+    }
+  };
+
+  // changing activce item of themes component in backward direction
+  backwardMoveThemesComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'Marshmello') {
+      dispatch(changeActiveItem('Virtue'));
+    } else if (activeItem === 'Striker') {
+      dispatch(changeActiveItem('Marshmello'));
+    } else if (activeItem === 'Virtue') {
+      dispatch(changeActiveItem('Striker'));
+    }
+  };
+
   // rotating item on the basis of angle travelled
   // function to rotate item
   rotate = (target) => {
@@ -176,15 +203,29 @@ class Buttons extends Component {
       // if anglechange is 15 then rotate the item towards backward if angle is less then zero
       if (angleChange === 15) {
         angleChange = 0;
+        const { activeComponent } = oldThis.props.component;
         if (distance < 0) {
-          // calling movement fuction of active item with old this
-          oldThis.backwardMoveMenuComponent();
-          oldThis.backwardMoveMusicComponent();
-          oldThis.backwardMoveSettingComponent();
+          // calling movement fuction of active item with old this on the basis of current component to move selected active item
+          //changing active item item according to active Component
+          if (activeComponent === 'Menu') {
+            oldThis.backwardMoveMenuComponent();
+          } else if (activeComponent === 'Music') {
+            oldThis.backwardMoveMusicComponent();
+          } else if (activeComponent === 'Setting') {
+            oldThis.backwardMoveSettingComponent();
+          } else if (activeComponent === 'Themes') {
+            oldThis.backwardMoveThemesComponent();
+          }
         } else {
-          oldThis.forwardMoveMenuComponent();
-          oldThis.forwardMoveMusicComponent();
-          oldThis.forwardMoveSettingComponent();
+          if (activeComponent === 'Menu') {
+            oldThis.forwardMoveMenuComponent();
+          } else if (activeComponent === 'Music') {
+            oldThis.forwardMoveMusicComponent();
+          } else if (activeComponent === 'Setting') {
+            oldThis.forwardMoveSettingComponent();
+          } else if (activeComponent === 'Themes') {
+            oldThis.forwardMoveThemesComponent();
+          }
         }
       }
     });
