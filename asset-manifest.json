@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/IPOD-react-CN/static/css/main.4d86921d.chunk.css",
+    "main.js": "/IPOD-react-CN/static/js/main.7f546aa7.chunk.js",
+    "main.js.map": "/IPOD-react-CN/static/js/main.7f546aa7.chunk.js.map",
+    "runtime-main.js": "/IPOD-react-CN/static/js/runtime-main.a945a0b7.js",
+    "runtime-main.js.map": "/IPOD-react-CN/static/js/runtime-main.a945a0b7.js.map",
+    "static/js/2.863a1aac.chunk.js": "/IPOD-react-CN/static/js/2.863a1aac.chunk.js",
+    "static/js/2.863a1aac.chunk.js.map": "/IPOD-react-CN/static/js/2.863a1aac.chunk.js.map",
+    "index.html": "/IPOD-react-CN/index.html",
+    "precache-manifest.00ab4b3a2bf5655ba552f9b1d49db7f8.js": "/IPOD-react-CN/precache-manifest.00ab4b3a2bf5655ba552f9b1d49db7f8.js",
+    "service-worker.js": "/IPOD-react-CN/service-worker.js",
+    "static/css/main.4d86921d.chunk.css.map": "/IPOD-react-CN/static/css/main.4d86921d.chunk.css.map",
+    "static/js/2.863a1aac.chunk.js.LICENSE.txt": "/IPOD-react-CN/static/js/2.863a1aac.chunk.js.LICENSE.txt",
+    "static/media/album.css": "/IPOD-react-CN/static/media/album.c7f2fb83.jpg",
+    "static/media/artist.css": "/IPOD-react-CN/static/media/artist.32d558a8.jpg",
+    "static/media/coverflow.css": "/IPOD-react-CN/static/media/coverflow.716ad0b2.jpg",
+    "static/media/games.css": "/IPOD-react-CN/static/media/games.ad0024f3.jpg",
+    "static/media/menu.css": "/IPOD-react-CN/static/media/menu-background.da25b80d.jpg",
+    "static/media/playing.css": "/IPOD-react-CN/static/media/playing.38b360d6.jpg",
+    "static/media/more_settings.css": "/IPOD-react-CN/static/media/setting.3a851e68.jpg",
+    "static/media/she_move.jpg": "/IPOD-react-CN/static/media/she_move.632318e1.jpg",
+    "static/media/she_move.mp3": "/IPOD-react-CN/static/media/she_move.8f30e924.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a945a0b7.js",
+    "static/js/2.863a1aac.chunk.js",
+    "static/css/main.4d86921d.chunk.css",
+    "static/js/main.7f546aa7.chunk.js"
+  ]
+}
