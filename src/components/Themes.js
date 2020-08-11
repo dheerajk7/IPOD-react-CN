@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../assets/css/common.css';
 
-// rendering setting component
-
-class Setting extends Component {
+class Themes extends Component {
   render() {
     const { activeItem, styles } = this.props;
     return (
@@ -12,19 +10,26 @@ class Setting extends Component {
         <div className="menu" style={styles.menu}>
           <div className="menu-heading">Setting</div>
           <ul className="menu-list-container">
-            {activeItem === 'Themes' ? (
+            {activeItem === 'Marshmello' ? (
               <li className="menu-list-item active" style={styles.active}>
-                Themes
+                Marshmello
               </li>
             ) : (
-              <li className="menu-list-item">Themes</li>
+              <li className="menu-list-item">Marshmello</li>
             )}
-            {activeItem === 'More Settings' ? (
+            {activeItem === 'Striker' ? (
               <li className="menu-list-item active" style={styles.active}>
-                More Settings
+                Striker
               </li>
             ) : (
-              <li className="menu-list-item">More Settings</li>
+              <li className="menu-list-item">Striker</li>
+            )}
+            {activeItem === 'Virtue' ? (
+              <li className="menu-list-item active" style={styles.active}>
+                Virtue
+              </li>
+            ) : (
+              <li className="menu-list-item">Virtue</li>
             )}
           </ul>
         </div>
@@ -40,4 +45,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Setting);
+export default connect(mapStateToProps)(Themes);

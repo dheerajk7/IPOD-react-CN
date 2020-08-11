@@ -8,6 +8,8 @@ import Music from './Music';
 import Artist from './Artist';
 import Album from './Album';
 import Playing from './Playing';
+import MoreSettings from './MoreSettings';
+import Themes from './Themes';
 import '../assets/css/screen.css';
 
 // render screen of IPOD
@@ -25,6 +27,8 @@ class Screen extends Component {
         {activeComponent === 'Artist' && <Artist />}
         {activeComponent === 'Album' && <Album />}
         {activeComponent === 'All Music' && <Playing />}
+        {activeComponent === 'More Settings' && <MoreSettings />}
+        {activeComponent === 'Themes' && <Themes />}
       </div>
     );
   }

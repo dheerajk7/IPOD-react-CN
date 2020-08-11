@@ -62,7 +62,11 @@ class Buttons extends Component {
       }
       return;
     }
-    if (activeComponent === 'Menu' || activeComponent === 'Music') {
+    if (
+      activeComponent === 'Menu' ||
+      activeComponent === 'Music' ||
+      activeComponent === 'Setting'
+    ) {
       dispatch(changeComponent(activeItem));
     }
   };
@@ -123,6 +127,28 @@ class Buttons extends Component {
     }
   };
 
+  // changing active item of setting component in forward direction
+  forwardMoveSettingComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'Themes') {
+      dispatch(changeActiveItem('More Settings'));
+    } else if (activeItem === 'More Settings') {
+      dispatch(changeActiveItem('Themes'));
+    }
+  };
+
+  // changing active item of setting component in backward direction
+  backwardMoveSettingComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'Themes') {
+      dispatch(changeActiveItem('More Settings'));
+    } else if (activeItem === 'More Settings') {
+      dispatch(changeActiveItem('Themes'));
+    }
+  };
+
   // rotating item on the basis of angle travelled
   // function to rotate item
   rotate = (target) => {
@@ -154,9 +180,11 @@ class Buttons extends Component {
           // calling movement fuction of active item with old this
           oldThis.backwardMoveMenuComponent();
           oldThis.backwardMoveMusicComponent();
+          oldThis.backwardMoveSettingComponent();
         } else {
           oldThis.forwardMoveMenuComponent();
           oldThis.forwardMoveMusicComponent();
+          oldThis.forwardMoveSettingComponent();
         }
       }
     });

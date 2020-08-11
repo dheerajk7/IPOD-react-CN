@@ -19,7 +19,6 @@ class Ipod extends Component {
 
   render() {
     const { styles } = this.props;
-    console.log('st', styles);
     return (
       <div className="container" style={styles}>
         <Screen
