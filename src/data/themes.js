@@ -1,4 +1,4 @@
-export const Marshmello = {
+export const marshmello = {
   background: { backgroundColor: '#f5c8cf' },
   ipod_background: {
     backgroundImage: 'linear-gradient(to right, #396570, #1c7187, #184b58)',
@@ -17,7 +17,7 @@ export const Marshmello = {
   },
 };
 
-export const Striker = {
+export const striker = {
   background: { backgroundColor: 'yellow' },
   ipod_background: {
     backgroundImage: 'linear-gradient(to right, blue, blue, black)',
@@ -36,7 +36,7 @@ export const Striker = {
   },
 };
 
-export const Virtue = {
+export const virtue = {
   background: { backgroundColor: 'lightpink' },
   ipod_background: {
     backgroundImage: 'linear-gradient(to right, red, red, pink)',

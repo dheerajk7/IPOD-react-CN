@@ -8,6 +8,9 @@ import { changeComponent } from '../actions/component';
 import { changeActiveItem } from '../actions/component';
 import { playSong, pauseSong } from '../actions/song';
 
+// importing action creator to change theme
+import { changeTheme } from '../actions/theme';
+
 // renders button component to show all buttons
 class Buttons extends Component {
   constructor(props) {
@@ -68,7 +71,7 @@ class Buttons extends Component {
     ) {
       dispatch(changeComponent(activeItem));
     } else if (activeComponent === 'Themes') {
-      console.log(activeItem);
+      dispatch(changeTheme(activeItem));
     }
   };
 

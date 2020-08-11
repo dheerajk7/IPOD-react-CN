@@ -1,3 +1,6 @@
+import { CHANGE_THEME } from '../actions/actionTypes';
+import { marshmello, virtue, striker } from '../data/themes';
+
 // component reducer initial state to render menu component on loading IPOD
 const initialState = {
   background: { backgroundColor: '#f5c8cf' },
@@ -20,8 +23,17 @@ const initialState = {
 
 export default function changingComponent(state = initialState, action) {
   switch (action.type) {
-    // case to change the component on the basis of component received in props
-    // default case to render menu component when IPOD is loaded initially
+    // case to change the theme on the basis of theme received in action
+    case CHANGE_THEME: {
+      if (action.theme === 'Striker') {
+        return striker;
+      } else if (action.theme === 'Virtue') {
+        return virtue;
+      } else {
+        return marshmello;
+      }
+    }
+    // default case to render marshmello theme when IPOD is loaded initially
     default: {
       return state;
     }

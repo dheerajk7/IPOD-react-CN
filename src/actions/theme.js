@@ -1,4 +1,4 @@
-import CHANGE_THEME from './actionTypes';
+import { CHANGE_THEME } from './actionTypes';
 
 //action creator for theme
 export function changeTheme(theme) {
