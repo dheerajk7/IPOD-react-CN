@@ -22,7 +22,7 @@ export default function changingComponent(state = initialState, action) {
         return {
           ...state,
           activeComponent: action.component,
-          activeItem: 'All Music',
+          activeItem: 'Now Playing',
         };
         // if we are changing active component to setting then we need to change active item to themes
       } else if (action.component === 'Setting') {

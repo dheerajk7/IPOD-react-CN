@@ -16,14 +16,14 @@ export let song = {
     image: she_move_img,
     song: new Audio(she_move_song),
   },
-  nikle_current: {
-    name: 'Nikle Current',
-    image: nikle_current_img,
-    song: new Audio(nikle_current_song),
-  },
   qaafirana: {
     name: 'Qaafirana',
     image: qaafirana_img,
     song: new Audio(qaafirana_song),
+  },
+  nikle_current: {
+    name: 'Nikle Current',
+    image: nikle_current_img,
+    song: new Audio(nikle_current_song),
   },
 };

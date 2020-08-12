@@ -13,6 +13,13 @@ class Music extends Component {
         <div className="menu" style={styles.menu}>
           <div className="menu-heading">Music</div>
           <ul className="menu-list-container">
+            {activeItem === 'Now Playing' ? (
+              <li className="menu-list-item active" style={styles.active}>
+                Now Playing
+              </li>
+            ) : (
+              <li className="menu-list-item">Now Playing</li>
+            )}
             {activeItem === 'All Music' ? (
               <li className="menu-list-item active" style={styles.active}>
                 All Music

@@ -76,6 +76,14 @@
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
+  transition: 1 all ease-in-out;
+}
+
+/* changing button apperance on click */
+.button :active {
+  padding: 5%;
+  border-radius: 50%;
+  background-color: #ffffff6e;
 }
 
 /* setting outline to none when button in focus */

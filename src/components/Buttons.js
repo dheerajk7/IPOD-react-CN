@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 // importing action creators to perform different actions
 import { changeComponent } from '../actions/component';
 import { changeActiveItem } from '../actions/component';
-import { playSong, pauseSong } from '../actions/song';
+import { playSong, pauseSong, changeSong } from '../actions/song';
 
 // importing action creator to change theme
 import { changeTheme } from '../actions/theme';
@@ -43,7 +43,7 @@ class Buttons extends Component {
   handlePausePlayButton = () => {
     const { playing, dispatch } = this.props;
     const { activeComponent } = this.props.component;
-    if (activeComponent !== 'All Music') {
+    if (activeComponent !== 'Now Playing') {
       return;
     }
     if (playing === true) {
@@ -57,7 +57,7 @@ class Buttons extends Component {
     const { dispatch, playing } = this.props;
     const { activeComponent, activeItem } = this.props.component;
     // if active component is playing then center button will also pause and play song like pause play button
-    if (activeComponent === 'All Music') {
+    if (activeComponent === 'Now Playing') {
       if (playing === true) {
         dispatch(pauseSong());
       } else {
@@ -72,6 +72,42 @@ class Buttons extends Component {
       dispatch(changeComponent(activeItem));
     } else if (activeComponent === 'Themes') {
       dispatch(changeTheme(activeItem));
+    }
+  };
+
+  // change song in forward direction when playing component is active
+  handleBackwardButton = () => {
+    const { dispatch } = this.props;
+    const { activeComponent } = this.props.component;
+    const { song } = this.props.song;
+    song.load();
+    if (activeComponent === 'Now Playing') {
+      const { name } = this.props.song;
+      if (name === 'She Move') {
+        dispatch(changeSong('Nikle Current'));
+      } else if (name === 'Qaafirana') {
+        dispatch(changeSong('She Move'));
+      } else if (name === 'Nikle Current') {
+        dispatch(changeSong('Qaafirana'));
+      }
+    }
+  };
+
+  // change song in backward direction when playing component is active
+  handleForwardButton = () => {
+    const { dispatch } = this.props;
+    const { activeComponent } = this.props.component;
+    const { song } = this.props.song;
+    song.load();
+    if (activeComponent === 'Now Playing') {
+      const { name } = this.props.song;
+      if (name === 'She Move') {
+        dispatch(changeSong('Qaafirana'));
+      } else if (name === 'Qaafirana') {
+        dispatch(changeSong('Nikle Current'));
+      } else if (name === 'Nikle Current') {
+        dispatch(changeSong('She Move'));
+      }
     }
   };
 
@@ -109,12 +145,14 @@ class Buttons extends Component {
   forwardMoveMusicComponent = () => {
     const { dispatch } = this.props;
     const { activeItem } = this.props.component;
-    if (activeItem === 'All Music') {
+    if (activeItem === 'Now Playing') {
+      dispatch(changeActiveItem('All Music'));
+    } else if (activeItem === 'All Music') {
       dispatch(changeActiveItem('Artist'));
     } else if (activeItem === 'Artist') {
       dispatch(changeActiveItem('Album'));
     } else if (activeItem === 'Album') {
-      dispatch(changeActiveItem('All Music'));
+      dispatch(changeActiveItem('Now Playing'));
     }
   };
 
@@ -122,8 +160,10 @@ class Buttons extends Component {
   backwardMoveMusicComponent = () => {
     const { dispatch } = this.props;
     const { activeItem } = this.props.component;
-    if (activeItem === 'All Music') {
+    if (activeItem === 'Now Playing') {
       dispatch(changeActiveItem('Album'));
+    } else if (activeItem === 'All Music') {
+      dispatch(changeActiveItem('Now Playing'));
     } else if (activeItem === 'Artist') {
       dispatch(changeActiveItem('All Music'));
     } else if (activeItem === 'Album') {
@@ -266,7 +306,10 @@ class Buttons extends Component {
               </div>
             </div>
             <div className="center-button-container">
-              <div className="button backward-button">
+              <div
+                className="button backward-button"
+                onClick={this.handleBackwardButton}
+              >
                 <img
                   src="https://image.flaticon.com/icons/svg/915/915516.svg"
                   alt="backward-button"
@@ -281,7 +324,10 @@ class Buttons extends Component {
                   alt="center-button"
                 ></img>
               </div>
-              <div className="button forward-button">
+              <div
+                className="button forward-button"
+                onClick={this.handleForwardButton}
+              >
                 <img
                   src="https://image.flaticon.com/icons/svg/915/915517.svg"
                   alt="forward-button"
@@ -312,6 +358,7 @@ function mapStateToProps(state) {
     component: state.component,
     playing: state.song.isSongPlaying,
     styles: state.theme.circle_background,
+    song: state.song.activeSong,
   };
 }
 

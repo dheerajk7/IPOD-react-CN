@@ -30,6 +30,7 @@ class Screen extends Component {
         {activeComponent === 'All Music' && <AllMusic />}
         {activeComponent === 'More Settings' && <MoreSettings />}
         {activeComponent === 'Themes' && <Themes />}
+        {activeComponent === 'Now Playing' && <Playing />}
       </div>
     );
   }
