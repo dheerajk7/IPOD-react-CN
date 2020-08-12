@@ -31,11 +31,21 @@ export default function changingComponent(state = initialState, action) {
           activeComponent: action.component,
           activeItem: 'Themes',
         };
-      } else if (action.component === 'Themes') {
+      }
+      //if we are changing active component to setting then we need to change active item to marshmello
+      else if (action.component === 'Themes') {
         return {
           ...state,
           activeComponent: action.component,
           activeItem: 'Marshmello',
+        };
+      }
+      //if we are changing active component to all music then we need to set active item to She Move
+      else if (action.component === 'All Music') {
+        return {
+          ...state,
+          activeComponent: action.component,
+          activeItem: 'She Move',
         };
       }
       // changing to other component

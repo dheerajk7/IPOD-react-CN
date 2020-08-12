@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// importing song image
-import songImage from '../assets/images/she_move.jpg';
 import '../assets/css/common.css';
 import '../assets/css/playing.css';
+
 class Playing extends Component {
   constructor(props) {
     super(props);
@@ -16,10 +15,10 @@ class Playing extends Component {
   // setting up the current time of the song
   // calling one function to set the interval of 1 second to updating the current song time of song in state
   componentDidMount() {
-    const { song } = this.props;
+    const { song } = this.props.activeSong;
     this.setState({ currentSongDuration: song.currentTime });
     this.songDurationInterval = setInterval(() => {
-      this.setState({ currentTime: this.props.song.currentTime });
+      this.setState({ currentTime: this.props.activeSong.song.currentTime });
     }, 100);
   }
 
@@ -40,13 +39,13 @@ class Playing extends Component {
 
   // function to dispatch a method to play song
   playSong = () => {
-    const { song } = this.props;
+    const { song } = this.props.activeSong;
     song.play();
   };
 
   // function to display message to pause song
   pauseSong = () => {
-    const { song } = this.props;
+    const { song } = this.props.activeSong;
     song.pause();
   };
 
@@ -54,10 +53,9 @@ class Playing extends Component {
   render() {
     // setting up current duration and total song duration to show on screen
     const { playing } = this.props;
+    const { song, image } = this.props.activeSong;
     let totalSongDuration =
-      Math.floor(this.props.song.duration / 60) +
-      ':' +
-      Math.floor(this.props.song.duration % 60);
+      Math.floor(song.duration / 60) + ':' + Math.floor(song.duration % 60);
     let currentSongDuration =
       Math.floor(this.state.currentTime / 60) +
       ':' +
@@ -69,7 +67,7 @@ class Playing extends Component {
       <div className="playing-container screen-item-container">
         <div className="playing-heading">Music</div>
         <div className="playing-song-image">
-          <img src={songImage} alt="song-album"></img>
+          <img src={image} alt="song-album"></img>
         </div>
         <div className="song-name">She Move Like It</div>
         <div className="playing-button">
@@ -97,7 +95,7 @@ class Playing extends Component {
 function mapStateToProps(state) {
   return {
     playing: state.song.isSongPlaying,
-    song: state.song.song,
+    activeSong: state.song.activeSong,
   };
 }
 

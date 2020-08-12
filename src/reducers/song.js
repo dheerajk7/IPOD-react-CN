@@ -1,10 +1,10 @@
 import { PLAY_SONG, PAUSE_SONG } from '../actions/actionTypes';
-import song from '../assets/songs/she_move.mp3';
+import { song } from '../data/song';
 
 // song reducer intial state to maintain song status
 const initialState = {
   isSongPlaying: false,
-  song: new Audio(song),
+  activeSong: song.she_move,
 };
 
 // changing store on the basis of different actions

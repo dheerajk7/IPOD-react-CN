@@ -7,6 +7,7 @@ import Coverflow from './Coverflow';
 import Music from './Music';
 import Artist from './Artist';
 import Album from './Album';
+import AllMusic from './AllMusic';
 import Playing from './Playing';
 import MoreSettings from './MoreSettings';
 import Themes from './Themes';
@@ -26,7 +27,7 @@ class Screen extends Component {
         {activeComponent === 'Setting' && <Setting />}
         {activeComponent === 'Artist' && <Artist />}
         {activeComponent === 'Album' && <Album />}
-        {activeComponent === 'All Music' && <Playing />}
+        {activeComponent === 'All Music' && <AllMusic />}
         {activeComponent === 'More Settings' && <MoreSettings />}
         {activeComponent === 'Themes' && <Themes />}
       </div>
