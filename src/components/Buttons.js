@@ -72,6 +72,11 @@ class Buttons extends Component {
       dispatch(changeComponent(activeItem));
     } else if (activeComponent === 'Themes') {
       dispatch(changeTheme(activeItem));
+    } else if (activeComponent === 'All Music') {
+      dispatch(changeSong(activeItem));
+      const { song } = this.props.song;
+      song.load();
+      dispatch(changeComponent('Now Playing'));
     }
   };
 
@@ -80,8 +85,8 @@ class Buttons extends Component {
     const { dispatch } = this.props;
     const { activeComponent } = this.props.component;
     const { song } = this.props.song;
-    song.load();
     if (activeComponent === 'Now Playing') {
+      song.load();
       const { name } = this.props.song;
       if (name === 'She Move') {
         dispatch(changeSong('Nikle Current'));
@@ -98,8 +103,8 @@ class Buttons extends Component {
     const { dispatch } = this.props;
     const { activeComponent } = this.props.component;
     const { song } = this.props.song;
-    song.load();
     if (activeComponent === 'Now Playing') {
+      song.load();
       const { name } = this.props.song;
       if (name === 'She Move') {
         dispatch(changeSong('Qaafirana'));
@@ -219,6 +224,32 @@ class Buttons extends Component {
     }
   };
 
+  //changing active item of all music component in forward direction
+  forwardMoveAllMusicComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'She Move') {
+      dispatch(changeActiveItem('Qaafirana'));
+    } else if (activeItem === 'Qaafirana') {
+      dispatch(changeActiveItem('Nikle Current'));
+    } else if (activeItem === 'Nikle Current') {
+      dispatch(changeActiveItem('She Move'));
+    }
+  };
+
+  //changing active item of all music component in forward direction
+  backwardMoveAllMusicComponent = () => {
+    const { dispatch } = this.props;
+    const { activeItem } = this.props.component;
+    if (activeItem === 'She Move') {
+      dispatch(changeActiveItem('Nikle Current'));
+    } else if (activeItem === 'Qaafirana') {
+      dispatch(changeActiveItem('She Move'));
+    } else if (activeItem === 'Nikle Current') {
+      dispatch(changeActiveItem('Qaafirana'));
+    }
+  };
+
   // rotating item on the basis of angle travelled
   // function to rotate item
   rotate = (target) => {
@@ -258,6 +289,8 @@ class Buttons extends Component {
             oldThis.backwardMoveSettingComponent();
           } else if (activeComponent === 'Themes') {
             oldThis.backwardMoveThemesComponent();
+          } else if (activeComponent === 'All Music') {
+            oldThis.backwardMoveAllMusicComponent();
           }
         } else {
           if (activeComponent === 'Menu') {
@@ -268,6 +301,8 @@ class Buttons extends Component {
             oldThis.forwardMoveSettingComponent();
           } else if (activeComponent === 'Themes') {
             oldThis.forwardMoveThemesComponent();
+          } else if (activeComponent === 'All Music') {
+            oldThis.forwardMoveAllMusicComponent();
           }
         }
       }

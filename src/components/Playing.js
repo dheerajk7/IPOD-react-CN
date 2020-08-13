@@ -53,7 +53,7 @@ class Playing extends Component {
   render() {
     // setting up current duration and total song duration to show on screen
     const { playing } = this.props;
-    const { song, image } = this.props.activeSong;
+    const { song, image, name } = this.props.activeSong;
     let totalSongDuration =
       Math.floor(song.duration / 60) + ':' + Math.floor(song.duration % 60);
     let currentSongDuration =
@@ -69,7 +69,7 @@ class Playing extends Component {
         <div className="playing-song-image">
           <img src={image} alt="song-album"></img>
         </div>
-        <div className="song-name">She Move Like It</div>
+        <div className="song-name">{name}</div>
         <div className="playing-button">
           {playing ? (
             <img

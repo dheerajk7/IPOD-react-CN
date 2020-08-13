@@ -9,7 +9,6 @@ export function playSong() {
 
 // action creator for pausing song
 export function pauseSong() {
-  console.log('paused');
   return {
     type: PAUSE_SONG,
   };
