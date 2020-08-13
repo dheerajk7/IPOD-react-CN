@@ -8,7 +8,6 @@ export const PAUSE_SONG = 'PAUSE_SONG';
 
 //to change song
 export const CHANGE_SONG = 'CHANGE_SONG';
-export const RELOAD = 'RELOAD';
 
 //to change theme
 export const CHANGE_THEME = 'CHANGE_THEME';

@@ -2,8 +2,8 @@ import { CHANGE_COMPONENT, CHANGE_ACTIVE_ITEM } from '../actions/actionTypes';
 
 // component reducer initial state to render menu component on loading IPOD
 const initialState = {
-  activeComponent: 'All Music',
-  activeItem: 'She Move',
+  activeComponent: 'Menu',
+  activeItem: 'Coverflow',
 };
 
 export default function changingComponent(state = initialState, action) {

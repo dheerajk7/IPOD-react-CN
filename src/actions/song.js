@@ -1,4 +1,4 @@
-import { PLAY_SONG, PAUSE_SONG, CHANGE_SONG, RELOAD } from './actionTypes';
+import { PLAY_SONG, PAUSE_SONG, CHANGE_SONG } from './actionTypes';
 
 //action creator for playing song
 export function playSong() {
@@ -19,13 +19,5 @@ export function changeSong(song) {
   return {
     type: CHANGE_SONG,
     song,
-  };
-}
-
-// to reload song from starting
-export function reload(song) {
-  return {
-    type: RELOAD,
-    song: song,
   };
 }

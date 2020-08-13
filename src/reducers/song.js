@@ -1,9 +1,4 @@
-import {
-  PLAY_SONG,
-  PAUSE_SONG,
-  CHANGE_SONG,
-  RELOAD,
-} from '../actions/actionTypes';
+import { PLAY_SONG, PAUSE_SONG, CHANGE_SONG } from '../actions/actionTypes';
 import { song } from '../data/song';
 
 // song reducer intial state to maintain song status
@@ -29,7 +24,7 @@ export default function pausePlaySong(state = initialState, action) {
         isSongPlaying: false,
       };
     }
-
+    // changing song on the basis of the song name we received in action
     case CHANGE_SONG: {
       let currentSong = '';
       if (action.song === 'She Move') {
@@ -37,28 +32,10 @@ export default function pausePlaySong(state = initialState, action) {
       } else if (action.song === 'Qaafirana') {
         currentSong = song.qaafirana;
       } else if (action.song === 'Nikle Current') {
-        currentSong = song.nikle_current;
+        currentSong = song.nikle_currant;
       } else {
         currentSong = song.she_move;
       }
-      return {
-        ...state,
-        isSongPlaying: true,
-        activeSong: currentSong,
-      };
-    }
-    case RELOAD: {
-      let currentSong = '';
-      if (action.song === 'She Move') {
-        currentSong = song.she_move;
-      } else if (action.song === 'Qaafirana') {
-        currentSong = song.qaafirana;
-      } else if (action.song === 'Nikle Current') {
-        currentSong = song.nikle_current;
-      } else {
-        currentSong = song.she_move;
-      }
-      currentSong.song.load();
       return {
         ...state,
         isSongPlaying: true,

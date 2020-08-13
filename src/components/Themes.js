@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../assets/css/common.css';
 
+// rendering themes component having different option for themes
 class Themes extends Component {
   render() {
     const { activeItem, styles } = this.props;

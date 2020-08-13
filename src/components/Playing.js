@@ -9,6 +9,9 @@ class Playing extends Component {
     this.state = {
       currentSongDuration: 0,
       songDurationInterval: '',
+      width: {
+        width: 0 + '%',
+      },
     };
   }
 
@@ -18,7 +21,20 @@ class Playing extends Component {
     const { song } = this.props.activeSong;
     this.setState({ currentSongDuration: song.currentTime });
     this.songDurationInterval = setInterval(() => {
-      this.setState({ currentTime: this.props.activeSong.song.currentTime });
+      const { song } = this.props.activeSong;
+      let time = song.currentTime;
+      // calculating width for progress bar
+      let width = (time / song.duration) * 100 + '%';
+      let minute = Math.floor(time / 60);
+      let second = Math.floor(time % 60);
+      if (minute < 10) {
+        minute = '0' + minute;
+      }
+      if (second < 10) {
+        second = '0' + second;
+      }
+      let currentTime = minute + ':' + second;
+      this.setState({ currentTime: currentTime, width: { width: width } });
     }, 100);
   }
 
@@ -54,15 +70,17 @@ class Playing extends Component {
     // setting up current duration and total song duration to show on screen
     const { playing } = this.props;
     const { song, image, name } = this.props.activeSong;
-    let totalSongDuration =
-      Math.floor(song.duration / 60) + ':' + Math.floor(song.duration % 60);
-    let currentSongDuration =
-      Math.floor(this.state.currentTime / 60) +
-      ':' +
-      Math.floor(this.state.currentTime % 60);
-    if (totalSongDuration === 'NaN:NaN') {
-      totalSongDuration = '0:0';
+    let totalSongDurationMinute = Math.floor(song.duration / 60);
+    let totalSongDurationSecond = Math.floor(song.duration % 60);
+    if (totalSongDurationMinute < 10) {
+      totalSongDurationMinute = '0' + totalSongDurationMinute;
     }
+    if (totalSongDurationSecond < 10) {
+      totalSongDurationSecond = '0' + totalSongDurationSecond;
+    }
+    let totalSongDuration =
+      totalSongDurationMinute + ':' + totalSongDurationSecond;
+    let currentSongDuration = this.state.currentTime;
     return (
       <div className="playing-container screen-item-container">
         <div className="playing-heading">Music</div>
@@ -86,6 +104,7 @@ class Playing extends Component {
         <div className="playing-time">
           {currentSongDuration}/{totalSongDuration}
         </div>
+        <div className="progress-bar" style={this.state.width}></div>
       </div>
     );
   }

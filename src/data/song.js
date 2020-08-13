@@ -4,12 +4,13 @@ import she_move_song from '../assets/songs/she_move.mp3';
 
 // importing nikle current song details
 import nikle_current_img from '../assets/images/nikle_current.jpg';
-import nikle_current_song from '../assets/songs/nikle_current.mp3';
+import nikle_currant_song from '../assets/songs/nikle_currant.mp3';
 
 // importing qaafirana song details
 import qaafirana_img from '../assets/images/qaafirana.jpg';
 import qaafirana_song from '../assets/songs/qaafirana.mp3';
 
+// creating song data object
 export let song = {
   she_move: {
     name: 'She Move',
@@ -21,9 +22,9 @@ export let song = {
     image: qaafirana_img,
     song: new Audio(qaafirana_song),
   },
-  nikle_current: {
-    name: 'Nikle Current',
+  nikle_currant: {
+    name: 'Nikle Currant',
     image: nikle_current_img,
-    song: new Audio(nikle_current_song),
+    song: new Audio(nikle_currant_song),
   },
 };

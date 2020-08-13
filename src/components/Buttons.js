@@ -92,7 +92,7 @@ class Buttons extends Component {
         dispatch(changeSong('Nikle Current'));
       } else if (name === 'Qaafirana') {
         dispatch(changeSong('She Move'));
-      } else if (name === 'Nikle Current') {
+      } else if (name === 'Nikle Currant') {
         dispatch(changeSong('Qaafirana'));
       }
     }
@@ -110,7 +110,7 @@ class Buttons extends Component {
         dispatch(changeSong('Qaafirana'));
       } else if (name === 'Qaafirana') {
         dispatch(changeSong('Nikle Current'));
-      } else if (name === 'Nikle Current') {
+      } else if (name === 'Nikle Currant') {
         dispatch(changeSong('She Move'));
       }
     }

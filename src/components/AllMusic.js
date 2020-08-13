@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import '../assets/css/common.css';
 import '../assets/css/menu.css';
 
+//rendering all music list component
 class AllMusic extends Component {
   render() {
     const { activeItem, styles } = this.props;
@@ -27,10 +28,10 @@ class AllMusic extends Component {
             )}
             {activeItem === 'Nikle Current' ? (
               <li className="menu-list-item active" style={styles.active}>
-                Nikle Current
+                Nikle Currant
               </li>
             ) : (
-              <li className="menu-list-item">Nikle Current</li>
+              <li className="menu-list-item">Nikle Currant</li>
             )}
           </ul>
         </div>
