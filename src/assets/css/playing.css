@@ -42,8 +42,8 @@
 /* style for the playing button show in playing component */
 .playing-button {
   width: 20%;
-  height: 18%;
-  margin-bottom: 2%;
+  height: 16%;
+  margin-bottom: 1%;
 }
 
 .playing-button img {

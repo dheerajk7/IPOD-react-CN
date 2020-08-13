@@ -1,7 +1,9 @@
 In Linux 
-    1. chmod +x node_modules/.bin/react-scripts
-    2. run npm start
+    1. run npm install
+    2. chmod +x node_modules/.bin/react-scripts
+    3. run npm start
 
 In Windows
-    1. npm i -g react-scripts 
-    1. run npm start
+    1. run npm install
+    2. npm i -g react-scripts 
+    3. run npm start
