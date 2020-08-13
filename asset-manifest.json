@@ -1,31 +1,35 @@
 {
   "files": {
-    "main.css": "/IPOD-react-CN/static/css/main.4d86921d.chunk.css",
-    "main.js": "/IPOD-react-CN/static/js/main.7f546aa7.chunk.js",
-    "main.js.map": "/IPOD-react-CN/static/js/main.7f546aa7.chunk.js.map",
+    "main.css": "/IPOD-react-CN/static/css/main.aad84bc1.chunk.css",
+    "main.js": "/IPOD-react-CN/static/js/main.d6ca0394.chunk.js",
+    "main.js.map": "/IPOD-react-CN/static/js/main.d6ca0394.chunk.js.map",
     "runtime-main.js": "/IPOD-react-CN/static/js/runtime-main.a945a0b7.js",
     "runtime-main.js.map": "/IPOD-react-CN/static/js/runtime-main.a945a0b7.js.map",
-    "static/js/2.863a1aac.chunk.js": "/IPOD-react-CN/static/js/2.863a1aac.chunk.js",
-    "static/js/2.863a1aac.chunk.js.map": "/IPOD-react-CN/static/js/2.863a1aac.chunk.js.map",
+    "static/js/2.4f912978.chunk.js": "/IPOD-react-CN/static/js/2.4f912978.chunk.js",
+    "static/js/2.4f912978.chunk.js.map": "/IPOD-react-CN/static/js/2.4f912978.chunk.js.map",
     "index.html": "/IPOD-react-CN/index.html",
-    "precache-manifest.00ab4b3a2bf5655ba552f9b1d49db7f8.js": "/IPOD-react-CN/precache-manifest.00ab4b3a2bf5655ba552f9b1d49db7f8.js",
+    "precache-manifest.11827df1b11fa54abba8adc039c191bf.js": "/IPOD-react-CN/precache-manifest.11827df1b11fa54abba8adc039c191bf.js",
     "service-worker.js": "/IPOD-react-CN/service-worker.js",
-    "static/css/main.4d86921d.chunk.css.map": "/IPOD-react-CN/static/css/main.4d86921d.chunk.css.map",
-    "static/js/2.863a1aac.chunk.js.LICENSE.txt": "/IPOD-react-CN/static/js/2.863a1aac.chunk.js.LICENSE.txt",
+    "static/css/main.aad84bc1.chunk.css.map": "/IPOD-react-CN/static/css/main.aad84bc1.chunk.css.map",
+    "static/js/2.4f912978.chunk.js.LICENSE.txt": "/IPOD-react-CN/static/js/2.4f912978.chunk.js.LICENSE.txt",
     "static/media/album.css": "/IPOD-react-CN/static/media/album.c7f2fb83.jpg",
     "static/media/artist.css": "/IPOD-react-CN/static/media/artist.32d558a8.jpg",
     "static/media/coverflow.css": "/IPOD-react-CN/static/media/coverflow.716ad0b2.jpg",
-    "static/media/games.css": "/IPOD-react-CN/static/media/games.ad0024f3.jpg",
+    "static/media/games.css": "/IPOD-react-CN/static/media/games.7a2a1246.gif",
     "static/media/menu.css": "/IPOD-react-CN/static/media/menu-background.da25b80d.jpg",
-    "static/media/playing.css": "/IPOD-react-CN/static/media/playing.38b360d6.jpg",
+    "static/media/nikle_currant.mp3": "/IPOD-react-CN/static/media/nikle_currant.71ce7c17.mp3",
+    "static/media/nikle_current.jpg": "/IPOD-react-CN/static/media/nikle_current.662cddd6.jpg",
+    "static/media/playing.css": "/IPOD-react-CN/static/media/playing.ee858096.jpg",
+    "static/media/qaafirana.mp3": "/IPOD-react-CN/static/media/qaafirana.499795a1.mp3",
+    "static/media/qaafirana.jpg": "/IPOD-react-CN/static/media/qaafirana.a353567c.jpg",
     "static/media/more_settings.css": "/IPOD-react-CN/static/media/setting.3a851e68.jpg",
     "static/media/she_move.jpg": "/IPOD-react-CN/static/media/she_move.632318e1.jpg",
-    "static/media/she_move.mp3": "/IPOD-react-CN/static/media/she_move.8f30e924.mp3"
+    "static/media/she_move.mp3": "/IPOD-react-CN/static/media/she_move.bcddd63b.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.a945a0b7.js",
-    "static/js/2.863a1aac.chunk.js",
-    "static/css/main.4d86921d.chunk.css",
-    "static/js/main.7f546aa7.chunk.js"
+    "static/js/2.4f912978.chunk.js",
+    "static/css/main.aad84bc1.chunk.css",
+    "static/js/main.d6ca0394.chunk.js"
   ]
 }
