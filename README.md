@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# IPOD Classic
 
-## Available Scripts
+Looks like an amazing classic IPOD device we all used to adore
 
-In the project directory, you can run:
+# Preview
 
-### `npm start`
+![preview image](./assets/images/preview.gif)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Visit app at http://dheerajk7.github.io/IPOD-react-CN
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Basis feature
 
-### `npm test`
+1. Fully working functionalty for listening to music, all controls work : play/pause, next, previous.
+2. Fully working settings menu and option to change theme.
+3. Now playing Menu.
+4. Songs and images only for personal use, a big credit to font-awesome and flat-icons.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# How to use/control ?
 
-### `npm run build`
+1. To play and pause music just go to music list and press center button and use controls for other option related to music like pause/play, next and previous.
+2. Short pressing on forward/reverse will take you to next/previous track (ONLY WHILE PLAYING).
+3. To navigate between a menu items you need to rotate on track wheel.
+4. To go to next menu or go inside a menu press center button.
+5. Songs do play and Please checkout settings menu.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Techstack
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### HTML, CSS, JS, React JS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Instructions to install
 
-### `npm run eject`
+1. Clone this repository from https://github.com/dheerajk7/IPOD-react-CN.git
+2. Install NPM if you have not installed yet.
+3. Go to project directory and run these commands
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   #### To install node Modules
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   #### To run project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```
+   npm start
+   ```
 
-## Learn More
+4. Go and check at http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
